@@ -1,2 +1,2 @@
 # lesson22
-Dynamics on the page-modal windows for registration and authentication, carousel. Verification of registration data, authentication data.
+ This project is for test purposes. The project contains dynamics on the page-modal windows for registration and authentication, carousel. Verification of registration data and authentication data.
