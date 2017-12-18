@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BuyItShop</title>
+<link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="../node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="../node_modules/bootstrap-social/bootstrap-social.css" rel="stylesheet">
+<link href="dist/dist.css" rel="stylesheet">
+   <!-- <link href="css/mystyles.css" rel="stylesheet">
+    <link href="css/products.css" rel="stylesheet">
+    <link href="css/carousel.css" rel="stylesheet">
+    <link href="css/modal.css" rel="stylesheet">-->
+</head>
+
+<body>
+<header class="jumbotron">
+    <!-- Main component for a primary marketing message or call to action -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> About</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                           role="button" aria-haspopup="true" aria-expanded="false">
+                            Order <span class="glyphicon glyphicon-th-list" class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href=#">Order</a></li>
+                            <li><a href="#">Guarantee</a></li>
+                            <li><a href="#">Track the order</a></li>
+                            <li><a href="#">Questions and answers</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Important</li>
+                            <li><a href="#">Credit</a></li>
+                            <li><a href="#">Shipping and payment</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a data-toggle="modal" data-target="#loginModal">
+                        <span class="glyphicon glyphicon-log-in"></span> Login</a>
+                    </li>
+                    <li><a data-toggle="modal" data-target="#registerModal">
+                        <span class="glyphicon glyphicon-log-in"></span> Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!--Login Modal-->
+    <div id="loginModal" class="modal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" style="color: gray">Login </h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form" name="loginForm">
+                        <div class="form-group">
+                            <label class="sr-only" for="email">Email address</label>
+                            <input type="email" class="form-control input-sm" id="email" placeholder="Email">
+                            <p><span id="errorEmail"></span></p>
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="password">Password</label>
+                            <input type="password" class="form-control input-sm" id="password" placeholder="Password">
+                            <p><span id="errorPassword"></span></p>
+                        </div>
+                        <div class="checkbox" style="color: gray">
+                            <label><input type="checkbox" id="rememberMe" checked> Remember me</label>
+                        </div>
+                        <button type="button" class="btn btn-info btn-sm" id="btnSignin">Sign in</button>
+                        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal" id="btnCancelLogin">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--Register Modal-->
+    <div id="registerModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" style="color: gray">Register </h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form" name="registerForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control input-sm" id="firstName" placeholder="First Name">
+                            <p><span id="firstNameError"></span></p>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-sm" id="lastName" placeholder="Last Name">
+                            <p><span id="lastNameError"></span></p>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control input-sm" id="emailRegister" placeholder="Email">
+                            <p><span id="emailError"></span></p>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-sm" id="phone" placeholder="+380000000000">
+                            <p><span id="phoneError"></span></p>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-sm" id="address" placeholder="Address">
+                            <p><span id="addressError"></span></p>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control input-sm" id="passwordRegister" placeholder="Password">
+                            <p><span id="passwordError"></span></p>
+                        </div>
+                        <button type="button" class="btn btn-info btn-sm" id="btnSignup">Sign up</button>
+                        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="row row-header">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="" alt="">
+                        <div class="carousel-caption">
+                            <h3>Заголовок 1 слайда</h3>
+                            <p>Текст (описание) 1 слайда...</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="" alt="">
+                        <div class="carousel-caption">
+                            <h3>Заголовок 2 слайда</h3>
+                            <p>Текст (описание) 2 слайда...</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="" alt="">
+                        <div class="carousel-caption">
+                            <h3>Заголовок 3 слайда</h3>
+                            <p>Текст (описание) 3 слайда...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+</header>
+
+<!--категории, товары категории, характеристики товара-->
+<div class="container">
+    <div class="row row-content">
+        <div class="col-xs-12 col-sm-3 col-md-3">
+            <ul id="categories">
+            </ul>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3">
+            <ul id="items">
+            </ul>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3">
+            <div  id="selected-item">
+            </div>
+            <button type="button" id="orderButton" style="display: none">Buy it</button>
+        
+        <div id="order" style="display: none">
+            <form name="orderForm">
+                <p>Enter quantity of product<span  style='color:red' id='quantityError'></span></p>
+                <p><input type="number" name="quantity" id="quantity"/></p>
+
+                <p>Enter delivery address<span style='color:red' id='deliveryError'></span></p>
+                <p><input type="text" name="address" placeholder="Delivery address" id="deliveryAddress"/></p>
+
+                <p>Choose how to notify the order status <span style='color:red' id='statusError'></span></p>
+                <p><input type="checkbox" name="status" value="By email"> By email </p>
+                <p> <input type="checkbox" name="status" value="By sms"> By sms </p>
+
+                <p> Select a payment method <span style='color:red' id='paymentError'></span></p>
+                <p> <input type="radio" name="payment" value="Payment upon receipt in cash" class="radio"> Payment upon receipt in cash</p>
+                <p> <input type="radio" name="payment" value="Payment by card" class="radio"> Payment by card </p>
+
+                <p><input type="button" value="Send" id="finish"/></p>
+            </form>
+        </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-3 col-md-3">
+        <div id="resultOfEnter" style="display: none">
+            <p>The information you entered to the order form:</p>
+            <ul id="result">
+            </ul>
+            <input type="button" value="OK" id="ok">
+        </div>
+    </div>
+    </div>
+</div>
+
+
+
+<footer>
+    <div class="container">
+        <div class="row row-footer">
+            <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-1">
+                <h5>Links</h5>
+                <ul>
+                    <li class="active"><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> About</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>Order</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-6 col-sm-5">
+                <h5>Our Address</h5>
+                <address>
+                    Odessa<br>
+                    <br>
+                    <br>
+                    <i class="fa fa-phone"></i>: +3800000000<br>
+                    <i class="fa fa-fax"></i>: +3800000000<br>
+                    <i class="fa fa-envelope"></i>:
+                    <a href="mailto:confusion@food.net">buyitshop@od.ua</a>
+                </address>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="nav navbar-nav" style="padding: 40px 10px;">
+                    <a class="btn btn-social-icon btn-google-plus" href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
+                    <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a>
+                    <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+                    <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                    <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
+                    <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
+                </div>
+
+            </div>
+            <div class="col-xs-12">
+                <p style="padding:10px;"></p>
+                <p align="center">© Copyright 2017 BuyItShop</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="dist/dist.js" type="text/javascript"></script>
+<!--<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/register.js"></script>
+<script type="text/javascript" src="js/carousel.js"></script>
+<script type="text/javascript" src="js/productsItem.js"></script>
+<script type="text/javascript" src="js/products.js"></script>
+<script type="text/javascript" src="js/order.js"></script>-->
+
+</div>
+</body>
+</html>

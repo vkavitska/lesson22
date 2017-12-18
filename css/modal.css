@@ -1,0 +1,10 @@
+#registerModal{
+    margin-left: 50px;
+}
+.form-group label{
+    color: gray;
+}
+.form-group span{
+    color: red;
+    font-size: 15px;
+}
